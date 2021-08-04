@@ -1,29 +1,33 @@
 <template>
   <div id="app">
-    <!-- <router-view :to></router-view> -->
-    <navbar :rotas="routes"/>
+    <navbar :rotas="routes" />
+    <!-- <footer :rotas="routes"/> -->
+    <footer><Footer /></footer>
+    <!-- <router-view></router-view> -->
     <router-view></router-view>
   </div>
 </template>
 
 <script>
-  import {routes} from '/routes';
-  import Navbar from './component/shared/Navbar.vue';
+import { routes } from "./routes";
+import Navbar from "./components/shared/Navbar.vue";
+import Footer from "./components/shared/Footer.vue";
 export default {
-  components:{
-    'navbar': Navbar
+  components: {
+    navbar: Navbar,
+    footer: Footer,
   },
-  data(){
-    return{
-      routes
-    }
-  }
-}
+  data() {
+    return {
+      routes,
+    };
+  },
+};
 </script>
 
 <style>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -31,7 +35,8 @@ export default {
   margin-top: 60px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
